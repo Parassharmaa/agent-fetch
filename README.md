@@ -17,6 +17,24 @@ AI agents increasingly need to fetch URLs — calling APIs, scraping pages, pull
 - Unauthorized domains (allowlist/blocklist support)
 - Resource exhaustion (rate limiting, body size limits, timeouts)
 
+## How it works
+
+agent-fetch performs DNS resolution, IP validation, and TCP connection as a single atomic operation. When a request is made, the library resolves the hostname using its own DNS resolver (Hickory DNS), checks every resolved IP address against a comprehensive blocklist (private ranges, loopback, link-local, IPv4-mapped IPv6, and other non-routable addresses), then connects directly to the validated IP — bypassing the runtime's default DNS resolution entirely. This eliminates the time-of-check-to-time-of-use (TOCTOU) gap that makes DNS rebinding attacks possible. On redirects, the full validation cycle repeats for each new hostname. Additional protections include request/response body size limits, timeouts, rate limiting, and scheme restrictions.
+
+```mermaid
+flowchart TD
+    A["fetch('https://example.com/api')"] --> B[Parse URL & check scheme]
+    B --> C[DNS Resolve via Hickory DNS]
+    C --> D{All IPs safe?}
+    D -- "127.0.0.0/8, 10.0.0.0/8,\n::ffff:127.x, 0x7f000001..." --> E[BLOCKED]
+    D -- "All public" --> F["TCP Connect to validated IP\n(PinnedResolver — no 2nd DNS lookup)"]
+    F --> G[TLS handshake if https]
+    G --> H[Send request with limits & timeouts]
+    H --> I{Redirect?}
+    I -- Yes --> C
+    I -- No --> J[Return response]
+```
+
 ## Rust usage
 
 ```rust
