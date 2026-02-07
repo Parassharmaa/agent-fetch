@@ -35,51 +35,16 @@ flowchart TD
     I -- No --> J[Return response]
 ```
 
-## Rust usage
-
-```rust
-use agent_fetch::{SafeClient, FetchPolicy, FetchRequest};
-
-let client = SafeClient::new(FetchPolicy::default());
-
-let response = client.fetch(FetchRequest {
-    url: "https://api.example.com/data".into(),
-    method: "GET".into(),
-    headers: Default::default(),
-    body: None,
-}).await?;
-
-println!("Status: {}", response.status);
-```
-
-### With a restrictive policy
-
-```rust
-use agent_fetch::{SafeClient, FetchPolicy, DomainPattern};
-
-let policy = FetchPolicy {
-    allowed_domains: Some(vec![
-        DomainPattern("*.example.com".into()),
-    ]),
-    blocked_domains: vec![
-        DomainPattern("internal.example.com".into()),
-    ],
-    max_redirects: 3,
-    request_timeout_ms: 5_000,
-    ..Default::default()
-};
-
-let client = SafeClient::new(policy);
-```
-
-## Node.js usage
+## Installation
 
 ```sh
-npm install agent-fetch
+npm install @parassharmaa/agent-fetch
 ```
 
+## Usage
+
 ```js
-const { SafeHttpClient } = require('agent-fetch');
+const { SafeHttpClient } = require('@parassharmaa/agent-fetch');
 
 const client = new SafeHttpClient({
   allowedDomains: ['*.example.com'],
@@ -99,20 +64,6 @@ console.log(response.headers);
 console.log(response.body.toString());
 ```
 
-## Building
+## License
 
-```sh
-# Rust library
-cargo build -p agent-fetch
-
-# Node.js bindings
-cd crates/agent-fetch-js
-npm install
-npm run build
-```
-
-## Testing
-
-```sh
-cargo test --workspace
-```
+MIT
