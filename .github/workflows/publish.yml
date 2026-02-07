@@ -118,14 +118,10 @@ jobs:
             if [ -f "$dir/package.json" ]; then
               echo "Publishing $dir..."
               cd "$dir"
-              npm publish --access public || true
+              npm publish --access public --provenance || true
               cd -
             fi
           done
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish main package
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public --provenance
