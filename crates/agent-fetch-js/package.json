@@ -1,6 +1,6 @@
 {
   "name": "@parassharmaa/agent-fetch",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Sandboxed HTTP client with SSRF protection for AI agents",
   "main": "index.js",
   "types": "index.d.ts",
