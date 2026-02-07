@@ -1,5 +1,5 @@
 {
-  "name": "agent-fetch-linux-x64-musl",
+  "name": "@parassharmaa/agent-fetch-linux-x64-musl",
   "version": "0.1.0",
   "cpu": [
     "x64"

@@ -1,5 +1,5 @@
 {
-  "name": "agent-fetch-win32-x64-msvc",
+  "name": "@parassharmaa/agent-fetch-win32-x64-msvc",
   "version": "0.1.0",
   "cpu": [
     "x64"

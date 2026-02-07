@@ -1,5 +1,5 @@
 {
-  "name": "agent-fetch-darwin-arm64",
+  "name": "@parassharmaa/agent-fetch-darwin-arm64",
   "version": "0.1.0",
   "cpu": [
     "arm64"
