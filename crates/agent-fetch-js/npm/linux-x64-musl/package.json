@@ -1,0 +1,34 @@
+{
+  "name": "agent-fetch-linux-x64-musl",
+  "version": "0.1.0",
+  "cpu": [
+    "x64"
+  ],
+  "main": "agent-fetch.linux-x64-musl.node",
+  "files": [
+    "agent-fetch.linux-x64-musl.node"
+  ],
+  "description": "Sandboxed HTTP client with SSRF protection for AI agents",
+  "keywords": [
+    "agent",
+    "fetch",
+    "ssrf",
+    "http",
+    "security",
+    "sandbox"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthropics/safe-fetch"
+  },
+  "os": [
+    "linux"
+  ],
+  "libc": [
+    "musl"
+  ]
+}

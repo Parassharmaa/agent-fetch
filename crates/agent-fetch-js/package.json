@@ -1,17 +1,47 @@
 {
   "name": "agent-fetch",
   "version": "0.1.0",
-  "description": "Sandboxed HTTP client with SSRF protection",
+  "description": "Sandboxed HTTP client with SSRF protection for AI agents",
   "main": "index.js",
   "types": "index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthropics/safe-fetch"
+  },
+  "keywords": [
+    "agent",
+    "fetch",
+    "ssrf",
+    "http",
+    "security",
+    "sandbox"
+  ],
+  "engines": {
+    "node": ">= 18"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "napi": {
     "binaryName": "agent-fetch",
-    "targets": []
+    "targets": [
+      "aarch64-apple-darwin",
+      "x86_64-apple-darwin",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "aarch64-unknown-linux-gnu",
+      "x86_64-pc-windows-msvc"
+    ]
   },
   "scripts": {
+    "artifacts": "napi artifacts",
     "build": "napi build --release --platform",
     "build:debug": "napi build --platform",
-    "test": "ava"
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "ava",
+    "version": "napi version"
   },
   "ava": {
     "extensions": {
@@ -20,6 +50,14 @@
     "nodeArguments": [
       "--import=tsx"
     ]
+  },
+  "optionalDependencies": {
+    "agent-fetch-darwin-arm64": "0.1.0",
+    "agent-fetch-darwin-x64": "0.1.0",
+    "agent-fetch-linux-x64-gnu": "0.1.0",
+    "agent-fetch-linux-x64-musl": "0.1.0",
+    "agent-fetch-linux-arm64-gnu": "0.1.0",
+    "agent-fetch-win32-x64-msvc": "0.1.0"
   },
   "devDependencies": {
     "@napi-rs/cli": "^3.5.0",

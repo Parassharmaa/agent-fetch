@@ -1,0 +1,31 @@
+{
+  "name": "agent-fetch-darwin-x64",
+  "version": "0.1.0",
+  "cpu": [
+    "x64"
+  ],
+  "main": "agent-fetch.darwin-x64.node",
+  "files": [
+    "agent-fetch.darwin-x64.node"
+  ],
+  "description": "Sandboxed HTTP client with SSRF protection for AI agents",
+  "keywords": [
+    "agent",
+    "fetch",
+    "ssrf",
+    "http",
+    "security",
+    "sandbox"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthropics/safe-fetch"
+  },
+  "os": [
+    "darwin"
+  ]
+}
