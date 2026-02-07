@@ -54,13 +54,14 @@
   "optionalDependencies": {
     "agent-fetch-darwin-arm64": "0.1.0",
     "agent-fetch-darwin-x64": "0.1.0",
+    "agent-fetch-linux-arm64-gnu": "0.1.0",
     "agent-fetch-linux-x64-gnu": "0.1.0",
     "agent-fetch-linux-x64-musl": "0.1.0",
-    "agent-fetch-linux-arm64-gnu": "0.1.0",
     "agent-fetch-win32-x64-msvc": "0.1.0"
   },
   "devDependencies": {
     "@napi-rs/cli": "^3.5.0",
+    "@types/node": "^25.2.1",
     "ava": "^6.4.1",
     "tsx": "^4.19.0",
     "typescript": "^5.9.3"
