@@ -1,6 +1,12 @@
 # agent-fetch
 
-Sandboxed HTTP client in Rust with Node.js bindings. Prevents SSRF attacks by validating every request through a policy pipeline before any connection is made.
+A sandboxed HTTP client designed for AI agents and agentic applications. When agents need to make HTTP calls, they shouldn't be able to reach internal infrastructure, exfiltrate data to private networks, or get tricked by DNS rebinding. `agent-fetch` enforces a security policy on every request before any connection is made.
+
+Available as a Rust crate and as an npm package with native Node.js bindings.
+
+## Why
+
+AI agents increasingly need to fetch URLs — calling APIs, scraping pages, pulling data. Giving them unrestricted HTTP access is dangerous. `agent-fetch` is a drop-in HTTP client that applies SSRF protection, domain policies, rate limiting, and resource controls so you can let agents make network calls safely.
 
 ## What it blocks
 
@@ -49,6 +55,10 @@ let client = SafeClient::new(policy);
 ```
 
 ## Node.js usage
+
+```sh
+npm install agent-fetch
+```
 
 ```js
 const { SafeHttpClient } = require('agent-fetch');

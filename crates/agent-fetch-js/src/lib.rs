@@ -1,8 +1,8 @@
 use std::collections::HashMap;
 
+use agent_fetch::{DomainPattern, FetchPolicy, FetchRequest, SafeClient};
 use napi::bindgen_prelude::*;
 use napi_derive::napi;
-use agent_fetch::{DomainPattern, FetchPolicy, FetchRequest, SafeClient};
 
 #[napi(object)]
 pub struct SafeHttpClientOptions {
