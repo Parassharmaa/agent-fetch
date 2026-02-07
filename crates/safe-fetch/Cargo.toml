@@ -1,0 +1,20 @@
+[package]
+name = "safe-fetch"
+version = "0.1.0"
+edition = "2021"
+
+[lints]
+workspace = true
+
+[dependencies]
+reqwest = { version = "0.13", default-features = false, features = ["rustls", "http2", "hickory-dns"] }
+hickory-resolver = "0.25"
+url = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "sync", "time", "macros"] }
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+http = "1"
+bytes = "1"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }

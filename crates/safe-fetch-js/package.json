@@ -1,0 +1,30 @@
+{
+  "name": "safe-fetch",
+  "version": "0.1.0",
+  "description": "Sandboxed HTTP client with SSRF protection",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "napi": {
+    "binaryName": "safe-fetch",
+    "targets": []
+  },
+  "scripts": {
+    "build": "napi build --release --platform",
+    "build:debug": "napi build --platform",
+    "test": "ava"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "commonjs"
+    },
+    "nodeArguments": [
+      "--import=tsx"
+    ]
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^3.5.0",
+    "ava": "^6.4.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,11 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/safe-fetch",
+    "crates/safe-fetch-js",
+]
+
+[workspace.lints.rust]
+deprecated = "deny"
+unused_imports = "warn"
+dead_code = "warn"
