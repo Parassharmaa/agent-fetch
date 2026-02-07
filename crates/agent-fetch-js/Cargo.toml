@@ -1,5 +1,5 @@
 [package]
-name = "safe-fetch-js"
+name = "agent-fetch-js"
 version = "0.1.0"
 edition = "2021"
 
@@ -10,7 +10,7 @@ workspace = true
 crate-type = ["cdylib"]
 
 [dependencies]
-safe-fetch = { path = "../safe-fetch" }
+agent-fetch = { path = "../agent-fetch" }
 napi = { version = "3", features = ["async", "serde-json"] }
 napi-derive = "3"
 tokio = { version = "1", features = ["rt-multi-thread"] }

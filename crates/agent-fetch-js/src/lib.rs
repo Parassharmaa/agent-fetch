@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use napi::bindgen_prelude::*;
 use napi_derive::napi;
-use safe_fetch::{DomainPattern, FetchPolicy, FetchRequest, SafeClient};
+use agent_fetch::{DomainPattern, FetchPolicy, FetchRequest, SafeClient};
 
 #[napi(object)]
 pub struct SafeHttpClientOptions {

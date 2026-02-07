@@ -1,11 +1,11 @@
 {
-  "name": "safe-fetch",
+  "name": "agent-fetch",
   "version": "0.1.0",
   "description": "Sandboxed HTTP client with SSRF protection",
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
-    "binaryName": "safe-fetch",
+    "binaryName": "agent-fetch",
     "targets": []
   },
   "scripts": {

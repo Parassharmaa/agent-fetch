@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 members = [
-    "crates/safe-fetch",
-    "crates/safe-fetch-js",
+    "crates/agent-fetch",
+    "crates/agent-fetch-js",
 ]
 
 [workspace.lints.rust]

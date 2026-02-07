@@ -1,4 +1,4 @@
-# safe-fetch
+# agent-fetch
 
 Sandboxed HTTP client in Rust with Node.js bindings. Prevents SSRF attacks by validating every request through a policy pipeline before any connection is made.
 
@@ -14,7 +14,7 @@ Sandboxed HTTP client in Rust with Node.js bindings. Prevents SSRF attacks by va
 ## Rust usage
 
 ```rust
-use safe_fetch::{SafeClient, FetchPolicy, FetchRequest};
+use agent_fetch::{SafeClient, FetchPolicy, FetchRequest};
 
 let client = SafeClient::new(FetchPolicy::default());
 
@@ -31,7 +31,7 @@ println!("Status: {}", response.status);
 ### With a restrictive policy
 
 ```rust
-use safe_fetch::{SafeClient, FetchPolicy, DomainPattern};
+use agent_fetch::{SafeClient, FetchPolicy, DomainPattern};
 
 let policy = FetchPolicy {
     allowed_domains: Some(vec![
@@ -51,7 +51,7 @@ let client = SafeClient::new(policy);
 ## Node.js usage
 
 ```js
-const { SafeHttpClient } = require('safe-fetch');
+const { SafeHttpClient } = require('agent-fetch');
 
 const client = new SafeHttpClient({
   allowedDomains: ['*.example.com'],
@@ -75,10 +75,10 @@ console.log(response.body.toString());
 
 ```sh
 # Rust library
-cargo build -p safe-fetch
+cargo build -p agent-fetch
 
 # Node.js bindings
-cd crates/safe-fetch-js
+cd crates/agent-fetch-js
 npm install
 npm run build
 ```

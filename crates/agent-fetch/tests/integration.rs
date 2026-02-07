@@ -1,4 +1,4 @@
-use safe_fetch::{FetchPolicy, FetchRequest, SafeClient};
+use agent_fetch::{FetchPolicy, FetchRequest, SafeClient};
 
 #[tokio::test]
 async fn rejects_private_ip_direct() {
@@ -35,7 +35,7 @@ async fn rejects_metadata_ip() {
 #[tokio::test]
 async fn rejects_blocked_domain() {
     let policy = FetchPolicy {
-        blocked_domains: vec![safe_fetch::DomainPattern("evil.com".into())],
+        blocked_domains: vec![agent_fetch::DomainPattern("evil.com".into())],
         ..Default::default()
     };
     let client = SafeClient::new(policy);
@@ -52,7 +52,7 @@ async fn rejects_blocked_domain() {
 #[tokio::test]
 async fn rejects_domain_not_in_allowlist() {
     let policy = FetchPolicy {
-        allowed_domains: Some(vec![safe_fetch::DomainPattern("good.com".into())]),
+        allowed_domains: Some(vec![agent_fetch::DomainPattern("good.com".into())]),
         ..Default::default()
     };
     let client = SafeClient::new(policy);
