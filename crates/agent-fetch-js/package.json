@@ -1,6 +1,6 @@
 {
   "name": "@parassharmaa/agent-fetch",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Sandboxed HTTP client with SSRF protection for AI agents",
   "main": "index.js",
   "types": "index.d.ts",
@@ -18,7 +18,7 @@
     "sandbox"
   ],
   "engines": {
-    "node": ">= 24"
+    "node": ">= 18"
   },
   "files": [
     "index.js",
@@ -26,6 +26,7 @@
   ],
   "napi": {
     "binaryName": "agent-fetch",
+    "packageName": "@parassharmaa/agent-fetch",
     "targets": [
       "aarch64-apple-darwin",
       "x86_64-apple-darwin",
@@ -51,12 +52,12 @@
     ]
   },
   "optionalDependencies": {
-    "@parassharmaa/agent-fetch-darwin-arm64": "0.1.1",
-    "@parassharmaa/agent-fetch-darwin-x64": "0.1.1",
-    "@parassharmaa/agent-fetch-linux-x64-gnu": "0.1.1",
-    "@parassharmaa/agent-fetch-linux-x64-musl": "0.1.1",
-    "@parassharmaa/agent-fetch-linux-arm64-gnu": "0.1.1",
-    "@parassharmaa/agent-fetch-win32-x64-msvc": "0.1.1"
+    "@parassharmaa/agent-fetch-darwin-arm64": "^0.1.0",
+    "@parassharmaa/agent-fetch-darwin-x64": "^0.1.0",
+    "@parassharmaa/agent-fetch-linux-x64-gnu": "^0.1.0",
+    "@parassharmaa/agent-fetch-linux-x64-musl": "^0.1.0",
+    "@parassharmaa/agent-fetch-linux-arm64-gnu": "^0.1.0",
+    "@parassharmaa/agent-fetch-win32-x64-msvc": "^0.1.0"
   },
   "devDependencies": {
     "@napi-rs/cli": "^3.5.0",
