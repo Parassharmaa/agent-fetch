@@ -1,7 +1,7 @@
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 /// Pattern for matching domains — either exact or wildcard (e.g. `*.example.com`).
-#[derive(Debug, Clone, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct DomainPattern(pub String);
 
 impl DomainPattern {
@@ -18,7 +18,7 @@ impl DomainPattern {
 }
 
 /// Controls every aspect of what the safe HTTP client is allowed to do.
-#[derive(Debug, Clone, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FetchPolicy {
     /// If `Some`, only these domains may be fetched. If `None`, all public domains are allowed.
     pub allowed_domains: Option<Vec<DomainPattern>>,

@@ -1,6 +1,6 @@
 [package]
 name = "agent-fetch"
-version = "0.1.9"
+version = "0.1.10"
 edition = "2021"
 description = "A sandboxed HTTP client for AI agents with SSRF protection, domain policies, rate limiting, and resource controls"
 license = "MIT"
