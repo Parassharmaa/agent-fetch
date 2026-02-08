@@ -1,7 +1,13 @@
 [package]
 name = "agent-fetch"
-version = "0.1.0"
+version = "0.1.9"
 edition = "2021"
+description = "A sandboxed HTTP client for AI agents with SSRF protection, domain policies, rate limiting, and resource controls"
+license = "MIT"
+repository = "https://github.com/Parassharmaa/agent-fetch"
+readme = "../../README.md"
+keywords = ["http", "security", "ssrf", "ai-agent", "sandbox"]
+categories = ["web-programming::http-client", "network-programming"]
 
 [lints]
 workspace = true
